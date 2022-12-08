@@ -1,0 +1,6 @@
+framework module DXPinView {
+  umbrella header "DXPinView-umbrella.h"
+
+  export *
+  module * { export * }
+}

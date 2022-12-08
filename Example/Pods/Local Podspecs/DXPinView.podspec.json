@@ -1,0 +1,22 @@
+{
+  "name": "DXPinView",
+  "version": "0.1.0",
+  "summary": "A short description of DXPinView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Depak/DXPinView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Depak": "deepak.inbox229@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Depak/DXPinView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "DXPinView/Classes/**/*"
+}

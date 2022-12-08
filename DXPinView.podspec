@@ -21,14 +21,14 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/Depak/DXPinView'
+  s.homepage         = 'https://github.com/deepaksingh4/DXPinView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Depak' => 'deepak.inbox229@gmail.com' }
-  s.source           = { :git => 'https://github.com/Depak/DXPinView.git', :tag => s.version.to_s }
+  s.author           = { 'Deepak' => 'deepak.inbox229@gmail.com' }
+  s.source           = { :git => 'https://github.com/deepaksingh4/DXPinView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'DXPinView/Classes/**/*'
   

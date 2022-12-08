@@ -1,0 +1,16 @@
+PODS:
+  - DXPinView (0.1.0)
+
+DEPENDENCIES:
+  - DXPinView (from `../`)
+
+EXTERNAL SOURCES:
+  DXPinView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DXPinView: 47d0b6559ae0db9ea35962cafb3e2d7489387a0b
+
+PODFILE CHECKSUM: dc69a3398852c282f5641da2d2a42d2cdf3b848d
+
+COCOAPODS: 1.11.3
