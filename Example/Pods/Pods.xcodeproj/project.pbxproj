@@ -16,6 +16,7 @@
 		B4EB4309AF5B483B6393CFC6B44B95E9 /* Pods-DXPinView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ACA5388FECBD5CC136B767B4DCEAF2CF /* Pods-DXPinView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C10FB1A3C03778C8F149F6AC3C714D70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		D9B5DD042941FDC700A8CF7D /* PinBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B5DD032941FDC700A8CF7D /* PinBoxView.swift */; };
+		D9F954DD2943662C007491FA /* BoxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F954DC2943662C007491FA /* BoxConfiguration.swift */; };
 		EE07B85093DF01B9D0ABE06E6813B52A /* Pods-DXPinView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B823553A795AEB4A67ED727BBA086E7 /* Pods-DXPinView_Example-dummy.m */; };
 		FFDFBE90F8D2FDA90918D1D4091B8F88 /* DXPinView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6BB02B0C06E62E555315142B7600A0 /* DXPinView-dummy.m */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		CB40CEF34654FB5501DECFC6D4D0A858 /* Pods-DXPinView_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DXPinView_Tests"; path = Pods_DXPinView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF9E852B8FE60BA16561C0111682752A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D9B5DD032941FDC700A8CF7D /* PinBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxView.swift; sourceTree = "<group>"; };
+		D9F954DC2943662C007491FA /* BoxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxConfiguration.swift; sourceTree = "<group>"; };
 		DD9D4AFB164763E9C10510608C8E2F3E /* Pods-DXPinView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DXPinView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		F76AC791A59F72AE55FC5A33E2ADA740 /* DXPinView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DXPinView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 				D9B5DD032941FDC700A8CF7D /* PinBoxView.swift */,
 				9F24403AB507A1A4F379E15A5E93049F /* Pod */,
 				61BE491C4AAAAF23CA80B0CC8FCC0A8B /* Support Files */,
+				D9F954DC2943662C007491FA /* BoxConfiguration.swift */,
 			);
 			name = DXPinView;
 			path = ../..;
@@ -380,6 +383,7 @@
 			files = (
 				FFDFBE90F8D2FDA90918D1D4091B8F88 /* DXPinView-dummy.m in Sources */,
 				6FB2B8DC373131D3447FBA9CA58F9734 /* DXPinView.swift in Sources */,
+				D9F954DD2943662C007491FA /* BoxConfiguration.swift in Sources */,
 				D9B5DD042941FDC700A8CF7D /* PinBoxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,18 +20,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZx-IS-I7r" customClass="DXPinView" customModule="DXPinView">
-                                <rect key="frame" x="67" y="193" width="240" height="49"/>
+                                <rect key="frame" x="10" y="193" width="349" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="B9d-jV-tS1"/>
-                                    <constraint firstAttribute="width" constant="240" id="fHx-zG-23U"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="count">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rZx-IS-I7r" secondAttribute="trailing" constant="16" id="PGQ-wY-tn7"/>
                             <constraint firstItem="rZx-IS-I7r" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="193" id="pdP-3g-uUP"/>
-                            <constraint firstItem="rZx-IS-I7r" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="67" id="zL6-Uc-9YV"/>
+                            <constraint firstItem="rZx-IS-I7r" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="zL6-Uc-9YV"/>
                         </constraints>
                     </view>
                     <connections>

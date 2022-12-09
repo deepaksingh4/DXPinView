@@ -2,12 +2,20 @@
 @IBDesignable
 public class DXPinView: UIView {
     
-    
-    var values: [String] = []
+    lazy var values: [String] = []
     var pinBoxes : [PinBoxView] = []
     var pinBoxStack : UIStackView = UIStackView()
     
-    var count: Int = 4
+    @IBInspectable var count: Int = 4 {
+        didSet{
+            cleanStackView()
+            setup()
+        }
+    }
+    @IBInspectable var cornerRadius : CGFloat = 10.0
+    @IBInspectable var font: UIFont = .systemFont(ofSize: 12)
+    @IBInspectable var backGroundColor: UIColor = .gray
+    
     public override var canBecomeFirstResponder: Bool{
         return true
     }
@@ -22,6 +30,7 @@ public class DXPinView: UIView {
     }
     
     func setup(){
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showKeyboard))
         self.addGestureRecognizer(tapGesture)
         
@@ -47,7 +56,19 @@ public class DXPinView: UIView {
         
         self.addSubview(pinBoxStack)
     }
+    
+    func cleanStackView(){
+        if pinBoxes.count > 0 {
+            pinBoxStack.removeFromSuperview()
+            pinBoxStack = UIStackView()
+            pinBoxes.removeAll()
+        }
+        return
+        
+    }
 }
+
+
 
 extension DXPinView: UIKeyInput {
     
@@ -62,14 +83,18 @@ extension DXPinView: UIKeyInput {
         }
         let pinBox = pinBoxes[values.count]
         pinBox.value = text
-       
-         values.append(text)
-         
+        
+        values.append(text)
+        
         print(values)
     }
     
     public func deleteBackward() {
-        print("Delete pressed")
+        if values.count > 0{
+            values.removeLast()
+            let pinBox = pinBoxes[values.count]
+            pinBox.value = ""
+        }
     }
     
     @objc(showKeyboard)
