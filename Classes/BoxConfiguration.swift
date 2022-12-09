@@ -22,7 +22,7 @@ extension BoxConfiguration{
         return UIFont.systemFont(ofSize: 12)
     }
     var backGroundColor: UIColor {
-        return .gray
+        return UIColor.gray
     }
     
 }

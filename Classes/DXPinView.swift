@@ -13,8 +13,8 @@ public class DXPinView: UIView {
         }
     }
     @IBInspectable var cornerRadius : CGFloat = 10.0
-    @IBInspectable var font: UIFont = .systemFont(ofSize: 12)
-    @IBInspectable var backGroundColor: UIColor = .gray
+    @IBInspectable var font: UIFont = UIFont.systemFont(ofSize: 12)
+    @IBInspectable var backGroundColor: UIColor = UIColor.gray
     
     public override var canBecomeFirstResponder: Bool{
         return true

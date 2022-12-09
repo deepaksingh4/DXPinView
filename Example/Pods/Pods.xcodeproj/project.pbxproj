@@ -46,7 +46,7 @@
 		260C52115CBEB6304D3450A085561553 /* Pods-DXPinView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DXPinView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		295452C1C0FB7518067B5C4B61B32AED /* DXPinView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DXPinView-Info.plist"; sourceTree = "<group>"; };
 		306C548AB3D2C32868F04249EB8C76A7 /* Pods-DXPinView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DXPinView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		308E226FDBBEC1B9E4C3B86213B1FB8F /* DXPinView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DXPinView; path = DXPinView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		308E226FDBBEC1B9E4C3B86213B1FB8F /* DXPinView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DXPinView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		359E3A90B76ACD6035C71A903CA6FCAF /* Pods-DXPinView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DXPinView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		379F7DE5689D601D2A2CF17899549BD4 /* DXPinView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DXPinView.modulemap; sourceTree = "<group>"; };
 		39FBFD600C9323FFD68440A0197DE7A5 /* Pods-DXPinView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DXPinView_Example.modulemap"; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		599FABD725C0DD610335A5E667B3F3C5 /* DXPinView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DXPinView-prefix.pch"; sourceTree = "<group>"; };
 		5AB7391A405D2E33092BAEB3672F8083 /* Pods-DXPinView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DXPinView_Example-umbrella.h"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		77DE62600960FFF653A2FB2C7015BD71 /* DXPinView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DXPinView.swift; path = DXPinView/Classes/DXPinView.swift; sourceTree = "<group>"; };
+		77DE62600960FFF653A2FB2C7015BD71 /* DXPinView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DXPinView.swift; sourceTree = "<group>"; };
 		8337B5371DA9B908864D500333B7A6FE /* Pods-DXPinView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DXPinView_Tests-Info.plist"; sourceTree = "<group>"; };
 		859D791AF3CFA7F949F35C7F027E14B7 /* DXPinView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DXPinView-umbrella.h"; sourceTree = "<group>"; };
 		87DFF4DFB963CDE0E51FF29A3C806518 /* Pods-DXPinView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DXPinView_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,11 +107,9 @@
 		382DECE825E5D8D065EDE5A7B241F698 /* DXPinView */ = {
 			isa = PBXGroup;
 			children = (
-				77DE62600960FFF653A2FB2C7015BD71 /* DXPinView.swift */,
-				D9B5DD032941FDC700A8CF7D /* PinBoxView.swift */,
+				D9F954DE29437930007491FA /* Classes */,
 				9F24403AB507A1A4F379E15A5E93049F /* Pod */,
 				61BE491C4AAAAF23CA80B0CC8FCC0A8B /* Support Files */,
-				D9F954DC2943662C007491FA /* BoxConfiguration.swift */,
 			);
 			name = DXPinView;
 			path = ../..;
@@ -143,7 +141,7 @@
 		83E87F3654ABB05A2C8A0F2147491534 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				308E226FDBBEC1B9E4C3B86213B1FB8F /* DXPinView */,
+				308E226FDBBEC1B9E4C3B86213B1FB8F /* DXPinView.framework */,
 				527059400EC56D9192764733C4B17396 /* Pods-DXPinView_Example */,
 				CB40CEF34654FB5501DECFC6D4D0A858 /* Pods-DXPinView_Tests */,
 			);
@@ -186,6 +184,16 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9F954DE29437930007491FA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D9F954DC2943662C007491FA /* BoxConfiguration.swift */,
+				77DE62600960FFF653A2FB2C7015BD71 /* DXPinView.swift */,
+				D9B5DD032941FDC700A8CF7D /* PinBoxView.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		EFB158498BE29E84E76DE80CEFB03749 /* Development Pods */ = {
@@ -274,7 +282,7 @@
 			);
 			name = DXPinView;
 			productName = DXPinView;
-			productReference = 308E226FDBBEC1B9E4C3B86213B1FB8F /* DXPinView */;
+			productReference = 308E226FDBBEC1B9E4C3B86213B1FB8F /* DXPinView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E93F58A6D795CA5BFC6A9F4A485E957B /* Pods-DXPinView_Example */ = {
@@ -438,7 +446,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -597,7 +605,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

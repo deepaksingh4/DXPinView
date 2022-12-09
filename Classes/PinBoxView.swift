@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal class PinBoxView: UIView{
+class PinBoxView: UIView{
     
     var value: String = "A" {
         didSet{
