@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,26 +21,29 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZx-IS-I7r" customClass="DXPinView" customModule="DXPinView">
-                                <rect key="frame" x="10" y="193" width="349" height="49"/>
+                                <rect key="frame" x="16" y="193" width="343" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="B9d-jV-tS1"/>
+                                    <constraint firstAttribute="height" constant="50" id="B9d-jV-tS1"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="count">
-                                        <integer key="value" value="6"/>
+                                        <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backGroundColor">
+                                        <color key="value" systemColor="systemRedColor"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rZx-IS-I7r" secondAttribute="trailing" constant="16" id="PGQ-wY-tn7"/>
                             <constraint firstItem="rZx-IS-I7r" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="193" id="pdP-3g-uUP"/>
-                            <constraint firstItem="rZx-IS-I7r" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="zL6-Uc-9YV"/>
+                            <constraint firstItem="rZx-IS-I7r" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="zL6-Uc-9YV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -51,4 +55,12 @@
             <point key="canvasLocation" x="136.80000000000001" y="-0.44977511244377816"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
