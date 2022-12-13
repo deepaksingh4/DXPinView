@@ -1,13 +1,14 @@
 //
-//  PinBoxSquareView.swift
+//  PinBoxViewUnderline.swift
 //  DXPinView
 //
-//  Created by Deepak Singh07 on 12/12/22.
+//  Created by Deepak Singh07 on 12/13/22.
 //
 
 import Foundation
 
-class PinBoxSquareView: UIView {
+class PinBoxViewUnderline: UIView{
+   
     var valueLabel: UILabel = UILabel()
     var value: String = "A" {
         didSet{
@@ -48,13 +49,9 @@ class PinBoxSquareView: UIView {
     
 }
 
-
-extension PinBoxSquareView: PinBoxViewProtocol{
-    
+extension PinBoxViewUnderline: PinBoxViewProtocol {
     func updateUI() {
-        self.layer.cornerRadius = 0
+        self.layer.cornerRadius = self.frame.height/2
         self.clipsToBounds = true
     }
-    
-
 }

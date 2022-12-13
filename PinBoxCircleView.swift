@@ -27,10 +27,34 @@ class PinBoxCircleView: UIView{
             }
         }
     }
+    
     var border: PinBoxBorder = .solid(width: 1) {
         didSet{
-            self.layer.borderWidth = 1
-            self.layer.borderColor = UIColor.gray.cgColor
+            switch border{
+            case .solid(let width):
+                self.layer.borderWidth = CGFloat(width)
+                self.layer.borderColor = UIColor.gray.cgColor
+                
+            case .dashed(let width):
+                let borderView = CAShapeLayer()
+                borderView.strokeColor = UIColor.clear.cgColor
+                borderView.lineDashPattern = [1, 1]
+                borderView.frame = self.bounds
+                borderView.fillColor = nil
+                borderView.lineWidth = 1
+                borderView.path = UIBezierPath(rect: self.bounds).cgPath
+                self.layer.borderWidth = CGFloat(1)
+                self.layer.addSublayer(borderView)
+                self.layer.borderColor = UIColor.red.cgColor
+                
+            case .none:
+                print("No border")
+            case .underLine:
+                print("Later")
+            }
+            
+            
+            
         }
     }
     

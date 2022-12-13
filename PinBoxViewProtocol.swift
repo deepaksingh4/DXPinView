@@ -16,6 +16,8 @@ protocol PinBoxViewProtocol where Self: UIView {
     
     func updateUI()
     func drawLabel()
+    init()
+    
 }
 
 extension PinBoxViewProtocol{
@@ -45,6 +47,7 @@ extension PinBoxViewProtocol{
     }
 
     func drawLabel(){
+
         valueLabel = UILabel()
         valueLabel.center = self.center
         valueLabel.font = font
@@ -58,8 +61,6 @@ extension PinBoxViewProtocol{
         self.addConstraint(widthConstraint)
         self.addConstraint(heightConstraint)
         self.updateConstraints()
-        
-        
     }
 }
 

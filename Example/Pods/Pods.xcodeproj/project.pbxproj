@@ -14,6 +14,8 @@
 		9C2E0BCE1AAB7E0795B2754FF29BAF30 /* Pods-DXPinView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AB7391A405D2E33092BAEB3672F8083 /* Pods-DXPinView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4EB4309AF5B483B6393CFC6B44B95E9 /* Pods-DXPinView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ACA5388FECBD5CC136B767B4DCEAF2CF /* Pods-DXPinView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C10FB1A3C03778C8F149F6AC3C714D70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		D917955429486AEC00189CC8 /* PinBoxFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917955329486AEC00189CC8 /* PinBoxFactory.swift */; };
+		D917955629488B8100189CC8 /* PinBoxViewUnderline.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917955529488B8100189CC8 /* PinBoxViewUnderline.swift */; };
 		D9C243E12947286800786316 /* PinBoxViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C243E02947286800786316 /* PinBoxViewProtocol.swift */; };
 		D9C243E32947477A00786316 /* PinBoxCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C243E22947477A00786316 /* PinBoxCircleView.swift */; };
 		D9C243E729474FFD00786316 /* DXPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C243E529474FFD00786316 /* DXPinView.swift */; };
@@ -70,6 +72,8 @@
 		C07242B7E4A42B032CFF39A72B6F8AFE /* Pods-DXPinView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DXPinView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB40CEF34654FB5501DECFC6D4D0A858 /* Pods-DXPinView_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DXPinView_Tests"; path = Pods_DXPinView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF9E852B8FE60BA16561C0111682752A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D917955329486AEC00189CC8 /* PinBoxFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxFactory.swift; sourceTree = "<group>"; };
+		D917955529488B8100189CC8 /* PinBoxViewUnderline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxViewUnderline.swift; sourceTree = "<group>"; };
 		D9C243E02947286800786316 /* PinBoxViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxViewProtocol.swift; sourceTree = "<group>"; };
 		D9C243E22947477A00786316 /* PinBoxCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxCircleView.swift; sourceTree = "<group>"; };
 		D9C243E529474FFD00786316 /* DXPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXPinView.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				D9C243E529474FFD00786316 /* DXPinView.swift */,
 				9F24403AB507A1A4F379E15A5E93049F /* Pod */,
 				61BE491C4AAAAF23CA80B0CC8FCC0A8B /* Support Files */,
+				D917955329486AEC00189CC8 /* PinBoxFactory.swift */,
+				D917955529488B8100189CC8 /* PinBoxViewUnderline.swift */,
 			);
 			name = DXPinView;
 			path = ../..;
@@ -391,8 +397,10 @@
 			files = (
 				D9C243E12947286800786316 /* PinBoxViewProtocol.swift in Sources */,
 				FFDFBE90F8D2FDA90918D1D4091B8F88 /* DXPinView-dummy.m in Sources */,
+				D917955629488B8100189CC8 /* PinBoxViewUnderline.swift in Sources */,
 				D9C243E9294769D900786316 /* PinBoxSquareView.swift in Sources */,
 				D9C243E32947477A00786316 /* PinBoxCircleView.swift in Sources */,
+				D917955429486AEC00189CC8 /* PinBoxFactory.swift in Sources */,
 				D9C243E729474FFD00786316 /* DXPinView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
