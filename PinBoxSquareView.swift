@@ -8,28 +8,26 @@
 import Foundation
 
 class PinBoxSquareView: UIView {
+    
+    
     var valueLabel: UILabel = UILabel()
-    var value: String = "A" {
+    var value: String = "-*-" {
         didSet{
-            valueLabel.text = value
+            valueLabel.text = configuration.showText ? value : "●"
         }
     }
     
-    var background: PinBoxBackground = .none {
+    var deleteLast : Bool = false {
         didSet{
-            switch(background){
-            case .none:
-                self.backgroundColor = .clear
-            case .fill(let color, let opacity):
-                self.backgroundColor = color
-                self.layer.opacity = opacity
-            }
+            valueLabel.text = ""
         }
     }
-    var border: PinBoxBorder = .solid(width: 1) {
+    
+    var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet{
-            self.layer.borderWidth = 1
-            self.layer.borderColor = UIColor.gray.cgColor
+            self.drawLabel()
+            updateUI()
+            self.setNeedsDisplay()
         }
     }
     
@@ -45,15 +43,17 @@ class PinBoxSquareView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 
 extension PinBoxSquareView: PinBoxViewProtocol{
     
-    func updateUI() {
+   func updateUI() {
+        self.addSubview(valueLabel)
         self.layer.cornerRadius = 0
         self.clipsToBounds = true
+        self.setBackground(background: configuration.pinViewBackground)
+        self.setBorder(border: configuration.borderType, cornerRadius: 0)
     }
     
 

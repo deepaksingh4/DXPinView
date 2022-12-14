@@ -10,51 +10,23 @@ import Foundation
 class PinBoxCircleView: UIView{
    
     var valueLabel: UILabel = UILabel()
-    var value: String = "A" {
+    var value: String = "-*-" {
         didSet{
-            valueLabel.text = value
+            valueLabel.text = configuration.showText ? value : "●"
         }
     }
     
-    var background: PinBoxBackground = .none {
+    var deleteLast : Bool = false {
         didSet{
-            switch(background){
-            case .none:
-                self.backgroundColor = .clear
-            case .fill(let color, let opacity):
-                self.backgroundColor = color
-                self.layer.opacity = opacity
-            }
+            valueLabel.text = ""
         }
     }
     
-    var border: PinBoxBorder = .solid(width: 1) {
+    var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet{
-            switch border{
-            case .solid(let width):
-                self.layer.borderWidth = CGFloat(width)
-                self.layer.borderColor = UIColor.gray.cgColor
-                
-            case .dashed(let width):
-                let borderView = CAShapeLayer()
-                borderView.strokeColor = UIColor.clear.cgColor
-                borderView.lineDashPattern = [1, 1]
-                borderView.frame = self.bounds
-                borderView.fillColor = nil
-                borderView.lineWidth = 1
-                borderView.path = UIBezierPath(rect: self.bounds).cgPath
-                self.layer.borderWidth = CGFloat(1)
-                self.layer.addSublayer(borderView)
-                self.layer.borderColor = UIColor.red.cgColor
-                
-            case .none:
-                print("No border")
-            case .underLine:
-                print("Later")
-            }
-            
-            
-            
+            self.drawLabel()
+            updateUI()
+            self.setNeedsDisplay()
         }
     }
     
@@ -75,7 +47,10 @@ class PinBoxCircleView: UIView{
 
 extension PinBoxCircleView: PinBoxViewProtocol {
     func updateUI() {
+        
         self.layer.cornerRadius = self.frame.height/2
         self.clipsToBounds = true
+        self.setBorder(border: configuration.borderType, cornerRadius: self.frame.height/2)
+        self.setBackground(background: configuration.pinViewBackground)
     }
 }

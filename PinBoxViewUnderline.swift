@@ -27,7 +27,7 @@ class PinBoxViewUnderline: UIView{
             }
         }
     }
-    var border: PinBoxBorder = .solid(width: 1) {
+    var border: PinBoxBorder = .solid(width: 1, color: .gray) {
         didSet{
             self.layer.borderWidth = 1
             self.layer.borderColor = UIColor.gray.cgColor

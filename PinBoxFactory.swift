@@ -7,17 +7,17 @@
 
 import Foundation
 
-enum PinBoxType: String{
-    case circle = "circle"
-    case square = "square"
-  
+public enum PinBoxType: String{
+    case circle
+    case square
+    case underLine
 }
 
 struct PinBoxFactory {
     
-    let availablePinBoxes : [String: PinBoxViewProtocol.Type] = ["circle": PinBoxCircleView.self,"square": PinBoxSquareView.self]
+    let availablePinBoxes : [PinBoxType: PinBoxViewProtocol.Type] = [.circle: PinBoxCircleView.self,.square: PinBoxSquareView.self]
     
-    func createPinBoxView(type: String) -> PinBoxViewProtocol?{
+    func createPinBoxView(type: PinBoxType) -> PinBoxViewProtocol?{
         guard let pinBox = availablePinBoxes[type] else {
             return nil
         }

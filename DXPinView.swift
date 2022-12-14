@@ -3,40 +3,44 @@
 public class DXPinView: UIView {
     
     lazy var values: [String] = []
+    var enteredPin : String {
+        get{
+            return values.joined()
+        }
+    }
     var pinBoxes : [PinBoxViewProtocol] = []
     var pinBoxStack : UIStackView = UIStackView()
-    
-    @IBInspectable var textFont: UIFont = UIFont.systemFont(ofSize: 12)
-    @IBInspectable var backGroundColor: UIColor = UIColor.gray
-    @IBInspectable var pinBoxType : String = "square" {
+    private var viewConfiguration: DXPinViewConfiguration = DXPinViewConfiguration(){
         didSet{
             cleanStackView()
             setUpUI()
         }
     }
-    @IBInspectable var count: Int = 4
-    
-    
-    
     
     public override var canBecomeFirstResponder: Bool{
         return true
     }
-    
-    func setUpUI(){
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showKeyboard))
-        self.addGestureRecognizer(tapGesture)
-        setupStackView()
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.viewConfiguration = DXPinViewConfiguration()
     }
     
-   
+    public func updateConfiguration(config: DXPinViewConfiguration){
+        self.viewConfiguration = config
+    }
 }
 
 
 extension DXPinView {
     
-  private func cleanStackView(){
+    func setUpUI(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showKeyboard))
+        self.addGestureRecognizer(tapGesture)
+        setupStackView()
+    }
+    
+    private func cleanStackView(){
         if pinBoxes.count > 0 {
             for box in 0..<pinBoxes.count{
                 let pinBoxView = pinBoxes[box]
@@ -45,7 +49,6 @@ extension DXPinView {
             pinBoxes.removeAll()
         }
         return
-        
     }
     
     private func setupStackView(){
@@ -56,14 +59,15 @@ extension DXPinView {
         pinBoxStack.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(pinBoxStack)
         
-//        Adding constraint for positioning stack view in the main view
+        //        Adding constraint for positioning stack view in the main view
         let centerConstraintX = NSLayoutConstraint(item: pinBoxStack, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
         let centerConstraintY = NSLayoutConstraint(item: pinBoxStack, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
         let heightConstraint = NSLayoutConstraint(item: pinBoxStack, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0)
         let widthConstraint = NSLayoutConstraint(item: pinBoxStack, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
         self.addConstraints([centerConstraintX, centerConstraintY, heightConstraint, widthConstraint])
         self.updateConstraints()
-//        Add all the pinViews in StackView
+        
+        //        Add all the pinViews in StackView
         addPinBoxViews()
     }
     
@@ -71,27 +75,18 @@ extension DXPinView {
         
         let spacer = UIView()
         self.pinBoxStack.addArrangedSubview(spacer)
-        for _ in 0..<count{
-                 
-            guard let selectedPinBox = PinBoxType(rawValue: pinBoxType) else{
-                print("wrong box type")
-                return
-            }
-            guard let pinBox = PinBoxFactory().createPinBoxView(type: selectedPinBox.rawValue) else{
+        for _ in 0..<viewConfiguration.count{
+            guard let pinBox = PinBoxFactory().createPinBoxView(type: viewConfiguration.pinViewType) else{
                 return
             }
             pinBox.heightAnchor.constraint(equalToConstant: self.frame.height).isActive = true
-            let widthConstraint = NSLayoutConstraint(item: pinBox, attribute: .height, relatedBy: .equal, toItem: pinBox, attribute: .width, multiplier: 1, constant: 0)
-            pinBox.addConstraint(widthConstraint)
-            pinBox.border = .dashed(width: 1)
-            pinBox.font = textFont
-            pinBox.background = .fill(color: backGroundColor, opacity: 1)
+            pinBox.configuration = viewConfiguration.pinBoxConfiguration
             self.pinBoxes.append(pinBox)
             self.pinBoxStack.addArrangedSubview(pinBox)
         }
-        
         let spacer2 = UIView()
         self.pinBoxStack.addArrangedSubview(spacer2)
+        self.setNeedsDisplay()
     }
 }
 
@@ -103,14 +98,15 @@ extension DXPinView: UIKeyInput {
     }
     
     public func insertText(_ text: String) {
-        if values.count == count {
+        if values.count == viewConfiguration.count {
             self.resignFirstResponder()
             return
         }
-        let pinBox = pinBoxes[values.count]
-        pinBox.value = text
-        
-        values.append(text)
+        if TextValidator().isValid(value: text){
+            let pinBox = pinBoxes[values.count]
+            pinBox.value = text
+            values.append(text)
+        }
         
         print(values)
     }
@@ -119,7 +115,7 @@ extension DXPinView: UIKeyInput {
         if values.count > 0{
             values.removeLast()
             let pinBox = pinBoxes[values.count]
-            pinBox.value = ""
+            pinBox.deleteLast = true
         }
     }
     

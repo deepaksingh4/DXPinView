@@ -8,11 +8,10 @@
 import Foundation
 
 protocol PinBoxViewProtocol where Self: UIView {
-    var border: PinBoxBorder {get set}
-    var background: PinBoxBackground {get set}
     var valueLabel: UILabel {get set}
-    var font: UIFont {get set}
     var value: String {get set}
+    var configuration: DXPinBoxConfiguration {get set}
+    var deleteLast : Bool {get set}
     
     func updateUI()
     func drawLabel()
@@ -21,58 +20,60 @@ protocol PinBoxViewProtocol where Self: UIView {
 }
 
 extension PinBoxViewProtocol{
-    var border: PinBoxBorder {
+    
+    var configuration: DXPinBoxConfiguration  {
         get{
-            return PinBoxBorder.solid(width: 1)
+            return DXPinBoxConfiguration()
         }
         set{
             
-        }
-    }
-    var background: PinBoxBackground {
-        get{
-            return PinBoxBackground.fill(color: UIColor.gray, opacity: 1.0)
-        }
-        set{
         }
     }
     
-    var font: UIFont {
+    var deleteLast : Bool {
         get{
-            return UIFont.systemFont(ofSize: 30)
-        }
-        set{
+            return true
+        }set{
             
         }
     }
+    
 
+    
     func drawLabel(){
-
         valueLabel = UILabel()
         valueLabel.center = self.center
-        valueLabel.font = font
+        valueLabel.font = configuration.textFont
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.textAlignment = .center
-        valueLabel.textColor = .white
+        valueLabel.textColor = configuration.textColor
         valueLabel.clipsToBounds = true
         self.addSubview(valueLabel)
         let widthConstraint = NSLayoutConstraint(item: valueLabel, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
         let heightConstraint = NSLayoutConstraint(item: valueLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0)
         self.addConstraint(widthConstraint)
         self.addConstraint(heightConstraint)
+        let boxWidthConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
+        self.addConstraint(boxWidthConstraint)
         self.updateConstraints()
+        self.setBorder(border: configuration.borderType, cornerRadius: self.frame.height/2)
+        self.setBackground(background: configuration.pinViewBackground)
+    }
+    
+    func updateUI() {
+        
     }
 }
 
 
-enum PinBoxBorder {
-    case solid(width: Int)
-    case dashed(width: Int)
+public enum PinBoxBorder {
+    case solid(width: Float, color: UIColor)
+    case dashed(width: Float, color: UIColor)
     case underLine
     case none
 }
 
-enum PinBoxBackground {
+public enum PinBoxBackground {
     case fill(color: UIColor, opacity: Float)
     case none
 }

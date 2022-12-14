@@ -16,6 +16,10 @@
 		C10FB1A3C03778C8F149F6AC3C714D70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		D917955429486AEC00189CC8 /* PinBoxFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917955329486AEC00189CC8 /* PinBoxFactory.swift */; };
 		D917955629488B8100189CC8 /* PinBoxViewUnderline.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917955529488B8100189CC8 /* PinBoxViewUnderline.swift */; };
+		D933D8CF2949A6AD00D851C2 /* UIView+Cosmetics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D933D8CE2949A6AD00D851C2 /* UIView+Cosmetics.swift */; };
+		D933D8D12949C69300D851C2 /* DXPinViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D933D8D02949C69300D851C2 /* DXPinViewConfiguration.swift */; };
+		D933D8D32949FF9900D851C2 /* BasePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D933D8D22949FF9900D851C2 /* BasePinView.swift */; };
+		D933D8D5294A02DC00D851C2 /* TextValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D933D8D4294A02DC00D851C2 /* TextValidator.swift */; };
 		D9C243E12947286800786316 /* PinBoxViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C243E02947286800786316 /* PinBoxViewProtocol.swift */; };
 		D9C243E32947477A00786316 /* PinBoxCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C243E22947477A00786316 /* PinBoxCircleView.swift */; };
 		D9C243E729474FFD00786316 /* DXPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C243E529474FFD00786316 /* DXPinView.swift */; };
@@ -55,7 +59,7 @@
 		39FBFD600C9323FFD68440A0197DE7A5 /* Pods-DXPinView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DXPinView_Example.modulemap"; sourceTree = "<group>"; };
 		412FACCC43DA8803F9FB70744361016B /* Pods-DXPinView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DXPinView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		43CF14CE2ABD71369304E3F8BED0CE8A /* Pods-DXPinView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DXPinView_Tests.modulemap"; sourceTree = "<group>"; };
-		527059400EC56D9192764733C4B17396 /* Pods-DXPinView_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DXPinView_Example"; path = Pods_DXPinView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		527059400EC56D9192764733C4B17396 /* Pods_DXPinView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DXPinView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		574FD93DAB8957CEF298D56439785D34 /* Pods-DXPinView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DXPinView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		599FABD725C0DD610335A5E667B3F3C5 /* DXPinView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DXPinView-prefix.pch"; sourceTree = "<group>"; };
 		5AB7391A405D2E33092BAEB3672F8083 /* Pods-DXPinView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DXPinView_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -70,10 +74,14 @@
 		A9F73A9BC570C5560B373B73AC143616 /* DXPinView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DXPinView.release.xcconfig; sourceTree = "<group>"; };
 		ACA5388FECBD5CC136B767B4DCEAF2CF /* Pods-DXPinView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DXPinView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		C07242B7E4A42B032CFF39A72B6F8AFE /* Pods-DXPinView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DXPinView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		CB40CEF34654FB5501DECFC6D4D0A858 /* Pods-DXPinView_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DXPinView_Tests"; path = Pods_DXPinView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB40CEF34654FB5501DECFC6D4D0A858 /* Pods_DXPinView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DXPinView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF9E852B8FE60BA16561C0111682752A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D917955329486AEC00189CC8 /* PinBoxFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxFactory.swift; sourceTree = "<group>"; };
 		D917955529488B8100189CC8 /* PinBoxViewUnderline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxViewUnderline.swift; sourceTree = "<group>"; };
+		D933D8CE2949A6AD00D851C2 /* UIView+Cosmetics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Cosmetics.swift"; sourceTree = "<group>"; };
+		D933D8D02949C69300D851C2 /* DXPinViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXPinViewConfiguration.swift; sourceTree = "<group>"; };
+		D933D8D22949FF9900D851C2 /* BasePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePinView.swift; sourceTree = "<group>"; };
+		D933D8D4294A02DC00D851C2 /* TextValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValidator.swift; sourceTree = "<group>"; };
 		D9C243E02947286800786316 /* PinBoxViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxViewProtocol.swift; sourceTree = "<group>"; };
 		D9C243E22947477A00786316 /* PinBoxCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxCircleView.swift; sourceTree = "<group>"; };
 		D9C243E529474FFD00786316 /* DXPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXPinView.swift; sourceTree = "<group>"; };
@@ -113,14 +121,18 @@
 		382DECE825E5D8D065EDE5A7B241F698 /* DXPinView */ = {
 			isa = PBXGroup;
 			children = (
-				D9C243E02947286800786316 /* PinBoxViewProtocol.swift */,
 				D9C243E8294769D900786316 /* PinBoxSquareView.swift */,
+				D9C243E02947286800786316 /* PinBoxViewProtocol.swift */,
 				D9C243E22947477A00786316 /* PinBoxCircleView.swift */,
 				D9C243E529474FFD00786316 /* DXPinView.swift */,
 				9F24403AB507A1A4F379E15A5E93049F /* Pod */,
 				61BE491C4AAAAF23CA80B0CC8FCC0A8B /* Support Files */,
 				D917955329486AEC00189CC8 /* PinBoxFactory.swift */,
 				D917955529488B8100189CC8 /* PinBoxViewUnderline.swift */,
+				D933D8CE2949A6AD00D851C2 /* UIView+Cosmetics.swift */,
+				D933D8D02949C69300D851C2 /* DXPinViewConfiguration.swift */,
+				D933D8D22949FF9900D851C2 /* BasePinView.swift */,
+				D933D8D4294A02DC00D851C2 /* TextValidator.swift */,
 			);
 			name = DXPinView;
 			path = ../..;
@@ -153,8 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				308E226FDBBEC1B9E4C3B86213B1FB8F /* DXPinView.framework */,
-				527059400EC56D9192764733C4B17396 /* Pods-DXPinView_Example */,
-				CB40CEF34654FB5501DECFC6D4D0A858 /* Pods-DXPinView_Tests */,
+				527059400EC56D9192764733C4B17396 /* Pods_DXPinView_Example.framework */,
+				CB40CEF34654FB5501DECFC6D4D0A858 /* Pods_DXPinView_Tests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -302,7 +314,7 @@
 			);
 			name = "Pods-DXPinView_Example";
 			productName = Pods_DXPinView_Example;
-			productReference = 527059400EC56D9192764733C4B17396 /* Pods-DXPinView_Example */;
+			productReference = 527059400EC56D9192764733C4B17396 /* Pods_DXPinView_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EE178CC1CBEFFEF3EBDC13F763406272 /* Pods-DXPinView_Tests */ = {
@@ -321,7 +333,7 @@
 			);
 			name = "Pods-DXPinView_Tests";
 			productName = Pods_DXPinView_Tests;
-			productReference = CB40CEF34654FB5501DECFC6D4D0A858 /* Pods-DXPinView_Tests */;
+			productReference = CB40CEF34654FB5501DECFC6D4D0A858 /* Pods_DXPinView_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -396,12 +408,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9C243E12947286800786316 /* PinBoxViewProtocol.swift in Sources */,
+				D933D8D32949FF9900D851C2 /* BasePinView.swift in Sources */,
 				FFDFBE90F8D2FDA90918D1D4091B8F88 /* DXPinView-dummy.m in Sources */,
 				D917955629488B8100189CC8 /* PinBoxViewUnderline.swift in Sources */,
 				D9C243E9294769D900786316 /* PinBoxSquareView.swift in Sources */,
 				D9C243E32947477A00786316 /* PinBoxCircleView.swift in Sources */,
+				D933D8D5294A02DC00D851C2 /* TextValidator.swift in Sources */,
 				D917955429486AEC00189CC8 /* PinBoxFactory.swift in Sources */,
+				D933D8D12949C69300D851C2 /* DXPinViewConfiguration.swift in Sources */,
 				D9C243E729474FFD00786316 /* DXPinView.swift in Sources */,
+				D933D8CF2949A6AD00D851C2 /* UIView+Cosmetics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +464,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DXPinView/DXPinView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DXPinView/DXPinView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/DXPinView/DXPinView.modulemap";
 				PRODUCT_MODULE_NAME = DXPinView;
@@ -480,7 +496,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DXPinView_Example/Pods-DXPinView_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DXPinView_Example/Pods-DXPinView_Example.modulemap";
@@ -514,7 +530,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DXPinView_Tests/Pods-DXPinView_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DXPinView_Tests/Pods-DXPinView_Tests.modulemap";
@@ -609,7 +625,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DXPinView/DXPinView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DXPinView/DXPinView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/DXPinView/DXPinView.modulemap";
 				PRODUCT_MODULE_NAME = DXPinView;
@@ -641,7 +657,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DXPinView_Tests/Pods-DXPinView_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DXPinView_Tests/Pods-DXPinView_Tests.modulemap";
@@ -741,7 +757,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DXPinView_Example/Pods-DXPinView_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DXPinView_Example/Pods-DXPinView_Example.modulemap";
