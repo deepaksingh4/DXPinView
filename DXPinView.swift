@@ -42,10 +42,11 @@ extension DXPinView {
     
     private func cleanStackView(){
         if pinBoxes.count > 0 {
-            for box in 0..<pinBoxes.count{
-                let pinBoxView = pinBoxes[box]
-                pinBoxStack.removeArrangedSubview(pinBoxView)
+            for box in pinBoxStack.arrangedSubviews{
+                pinBoxStack.removeArrangedSubview(box)
+                box.removeFromSuperview()
             }
+            
             pinBoxes.removeAll()
         }
         return
@@ -98,6 +99,10 @@ extension DXPinView: UIKeyInput {
     }
     
     public func insertText(_ text: String) {
+        if text == "\n"{
+            self.resignFirstResponder()
+            return
+        }
         if values.count == viewConfiguration.count {
             self.resignFirstResponder()
             return
@@ -118,6 +123,8 @@ extension DXPinView: UIKeyInput {
             pinBox.deleteLast = true
         }
     }
+    
+    
     
     @objc(showKeyboard)
     func showKeyboard(){

@@ -29,6 +29,7 @@ public struct DXPinBoxConfiguration {
     var borderType: PinBoxBorder
     var textColor: UIColor
     
+    
     public init(textFont: UIFont = .systemFont(ofSize: 18), pinViewBackground: PinBoxBackground = .fill(color: .white, opacity: 1), borderWidth: Float = 0.5, showText: Bool = true, borderType: PinBoxBorder = .solid(width: 0.5, color: .gray), textColor: UIColor = .blue) {
         self.textFont = textFont
         self.pinViewBackground = pinViewBackground
