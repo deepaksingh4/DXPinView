@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DXPinView'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A view to get OTP, or ask user for passcode'
 
 # This description is used to generate tags and improve search results.
