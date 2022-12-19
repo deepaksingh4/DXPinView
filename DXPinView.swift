@@ -17,8 +17,8 @@ public class DXPinView: UIView {
     var pinBoxStack : UIStackView = UIStackView()
     private var viewConfiguration: DXPinViewConfiguration = DXPinViewConfiguration(){
         didSet{
-            cleanStackView()
-            setUpUI()
+                self.cleanStackView()
+                self.setUpUI()
         }
     }
     
@@ -34,6 +34,9 @@ public class DXPinView: UIView {
     public func updateConfiguration(config: DXPinViewConfiguration){
         self.viewConfiguration = config
     }
+    public func getConfiguration() -> DXPinViewConfiguration{
+        return viewConfiguration
+    }
 }
 
 
@@ -46,7 +49,7 @@ extension DXPinView {
     }
     
     private func cleanStackView(){
-        if pinBoxes.isEmpty {
+        if !pinBoxes.isEmpty {
             for box in pinBoxStack.arrangedSubviews{
                 pinBoxStack.removeArrangedSubview(box)
                 box.removeFromSuperview()
@@ -122,7 +125,7 @@ extension DXPinView: UIKeyInput {
     }
     
     public func deleteBackward() {
-        if values.isEmpty{
+        if !values.isEmpty{
             values.removeLast()
             let pinBox = pinBoxes[values.count]
             pinBox.deleteLast = true

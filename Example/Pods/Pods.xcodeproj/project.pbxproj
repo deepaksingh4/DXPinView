@@ -18,7 +18,6 @@
 		D917955629488B8100189CC8 /* PinBoxViewUnderline.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917955529488B8100189CC8 /* PinBoxViewUnderline.swift */; };
 		D933D8CF2949A6AD00D851C2 /* UIView+Cosmetics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D933D8CE2949A6AD00D851C2 /* UIView+Cosmetics.swift */; };
 		D933D8D12949C69300D851C2 /* DXPinViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D933D8D02949C69300D851C2 /* DXPinViewConfiguration.swift */; };
-		D933D8D32949FF9900D851C2 /* BasePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D933D8D22949FF9900D851C2 /* BasePinView.swift */; };
 		D933D8D5294A02DC00D851C2 /* TextValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D933D8D4294A02DC00D851C2 /* TextValidator.swift */; };
 		D9C243E12947286800786316 /* PinBoxViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C243E02947286800786316 /* PinBoxViewProtocol.swift */; };
 		D9C243E32947477A00786316 /* PinBoxCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C243E22947477A00786316 /* PinBoxCircleView.swift */; };
@@ -80,7 +79,6 @@
 		D917955529488B8100189CC8 /* PinBoxViewUnderline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxViewUnderline.swift; sourceTree = "<group>"; };
 		D933D8CE2949A6AD00D851C2 /* UIView+Cosmetics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Cosmetics.swift"; sourceTree = "<group>"; };
 		D933D8D02949C69300D851C2 /* DXPinViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXPinViewConfiguration.swift; sourceTree = "<group>"; };
-		D933D8D22949FF9900D851C2 /* BasePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePinView.swift; sourceTree = "<group>"; };
 		D933D8D4294A02DC00D851C2 /* TextValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValidator.swift; sourceTree = "<group>"; };
 		D9C243E02947286800786316 /* PinBoxViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxViewProtocol.swift; sourceTree = "<group>"; };
 		D9C243E22947477A00786316 /* PinBoxCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxCircleView.swift; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 				D917955529488B8100189CC8 /* PinBoxViewUnderline.swift */,
 				D933D8CE2949A6AD00D851C2 /* UIView+Cosmetics.swift */,
 				D933D8D02949C69300D851C2 /* DXPinViewConfiguration.swift */,
-				D933D8D22949FF9900D851C2 /* BasePinView.swift */,
 				D933D8D4294A02DC00D851C2 /* TextValidator.swift */,
 				137C78BE2DCFC439AD8C28F9141C3EB6 /* LICENSE */,
 				CF9E852B8FE60BA16561C0111682752A /* README.md */,
@@ -408,7 +405,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9C243E12947286800786316 /* PinBoxViewProtocol.swift in Sources */,
-				D933D8D32949FF9900D851C2 /* BasePinView.swift in Sources */,
 				FFDFBE90F8D2FDA90918D1D4091B8F88 /* DXPinView-dummy.m in Sources */,
 				D917955629488B8100189CC8 /* PinBoxViewUnderline.swift in Sources */,
 				D9C243E9294769D900786316 /* PinBoxSquareView.swift in Sources */,

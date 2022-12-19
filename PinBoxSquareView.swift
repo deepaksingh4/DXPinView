@@ -11,7 +11,7 @@ class PinBoxSquareView: UIView {
     
     
     var valueLabel: UILabel = UILabel()
-    var value: String = "-*-" {
+    var value: String = "" {
         didSet{
             valueLabel.text = configuration.showText ? value : "●"
         }

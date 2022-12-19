@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		8224B7BD7A3FAB4AEB3E0BC6 /* Pods_DXPinView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DC79699A292F33800B69EA /* Pods_DXPinView_Tests.framework */; };
+		D95F29372950779A00310206 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F29362950779A00310206 /* ConfigurationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		77FDAF28A7EE8BFDEB0D327D /* DXPinView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DXPinView.podspec; path = ../DXPinView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BF10220BD62006DAB5930A44 /* Pods-DXPinView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DXPinView_Example.release.xcconfig"; path = "Target Support Files/Pods-DXPinView_Example/Pods-DXPinView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		D95F29362950779A00310206 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		DC13FFCF2087549E78B721AF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E39CED757D11FA1B5824C5EA /* Pods-DXPinView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DXPinView_Example.debug.xcconfig"; path = "Target Support Files/Pods-DXPinView_Example/Pods-DXPinView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F028501A054F7CBB415C2760 /* Pods_DXPinView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DXPinView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				D95F29362950779A00310206 /* ConfigurationViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -332,6 +335,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				D95F29372950779A00310206 /* ConfigurationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

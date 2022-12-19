@@ -12,7 +12,6 @@ protocol PinBoxViewProtocol where Self: UIView {
     var value: String {get set}
     var configuration: DXPinBoxConfiguration {get set}
     var deleteLast : Bool {get set}
-    
     func updateUI()
     func drawLabel()
     init()
@@ -37,7 +36,6 @@ extension PinBoxViewProtocol{
             
         }
     }
-    
 
     
     func drawLabel(){

@@ -7,8 +7,8 @@
 
 import Foundation
 
-public enum PinBoxType: String{
-    case circle
+public enum PinBoxType: Int{
+    case circle = 0
     case square
     case underLine
 }
