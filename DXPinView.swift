@@ -1,5 +1,10 @@
+//
+//  DXPinView.swift
+//  DXPinView
+//
+//  Created by Deepak Singh on 12/12/22.
+//
 
-@IBDesignable
 public class DXPinView: UIView {
     
     lazy var values: [String] = []
@@ -41,7 +46,7 @@ extension DXPinView {
     }
     
     private func cleanStackView(){
-        if pinBoxes.count > 0 {
+        if pinBoxes.isEmpty {
             for box in pinBoxStack.arrangedSubviews{
                 pinBoxStack.removeArrangedSubview(box)
                 box.removeFromSuperview()
@@ -95,7 +100,7 @@ extension DXPinView {
 extension DXPinView: UIKeyInput {
     
     public var hasText: Bool {
-        return values.count > 0
+        return values.isEmpty
     }
     
     public func insertText(_ text: String) {
@@ -117,7 +122,7 @@ extension DXPinView: UIKeyInput {
     }
     
     public func deleteBackward() {
-        if values.count > 0{
+        if values.isEmpty{
             values.removeLast()
             let pinBox = pinBoxes[values.count]
             pinBox.deleteLast = true

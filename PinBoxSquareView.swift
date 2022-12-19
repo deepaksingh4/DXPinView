@@ -2,7 +2,7 @@
 //  PinBoxSquareView.swift
 //  DXPinView
 //
-//  Created by Deepak Singh07 on 12/12/22.
+//  Created by Deepak Singh on 12/12/22.
 //
 
 import Foundation

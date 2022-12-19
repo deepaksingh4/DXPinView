@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.0'
   s.swift_versions = '5.0'
-  s.source_files = 'Classes/*.{h,m,swift}'
+  s.source_files = '*.{h,swift}'
   # s.resource_bundles = {
   #   'DXPinView' => ['DXPinView/Assets/*.png']
   # }
