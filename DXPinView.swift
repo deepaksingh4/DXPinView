@@ -5,59 +5,42 @@
 //  Created by Deepak Singh on 12/12/22.
 //
 
+import UIKit
 public class DXPinView: UIView {
     
     private lazy var values: [String] = []
     public var enteredPin : String {
-        get{
+        get {
             return values.joined()
         }
     }
     private var pinBoxes : [PinBoxViewProtocol] = []
     private var pinBoxStack : UIStackView = UIStackView()
-    private var viewConfiguration: DXPinViewConfiguration = DXPinViewConfiguration(){
-        didSet{
-                self.cleanStackView()
-                self.setUpUI()
+    public var viewConfiguration: DXPinViewConfiguration = DXPinViewConfiguration() {
+        didSet {
+            cleanStackView()
+            addPinBoxViews()
         }
     }
     
-    public override var canBecomeFirstResponder: Bool{
+    public override var canBecomeFirstResponder: Bool {
         return true
     }
     
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.viewConfiguration = DXPinViewConfiguration()
-    }
-    
-    public func updateConfiguration(config: DXPinViewConfiguration){
-        self.viewConfiguration = config
+        setUpUI()
     }
 }
 
-
 extension DXPinView {
-    
     private func setUpUI(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showKeyboard))
         self.addGestureRecognizer(tapGesture)
         setupStackView()
     }
-    
-    private func cleanStackView(){
-        if !pinBoxes.isEmpty {
-            for box in pinBoxStack.arrangedSubviews{
-                pinBoxStack.removeArrangedSubview(box)
-                box.removeFromSuperview()
-            }
-            pinBoxes.removeAll()
-            values.removeAll()
-        }
-        return
-    }
-    
-    private func setupStackView(){
+        
+    private func setupStackView() {
         pinBoxStack.alignment = .fill
         pinBoxStack.distribution = .equalSpacing
         pinBoxStack.axis = .horizontal
@@ -72,16 +55,26 @@ extension DXPinView {
         let widthConstraint = NSLayoutConstraint(item: pinBoxStack, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
         self.addConstraints([centerConstraintX, centerConstraintY, heightConstraint, widthConstraint])
         self.updateConstraints()
-        
-        //        Add all the pinViews in StackView
-        addPinBoxViews()
     }
-    
-    private func addPinBoxViews(){
-        
+}
+
+extension DXPinView {
+    private func cleanStackView() {
+        if !pinBoxes.isEmpty {
+            for box in pinBoxStack.arrangedSubviews{
+                pinBoxStack.removeArrangedSubview(box)
+                box.removeFromSuperview()
+            }
+            pinBoxes.removeAll()
+            values.removeAll()
+        }
+        return
+    }
+
+    private func addPinBoxViews() {
         let spacer = UIView()
         self.pinBoxStack.addArrangedSubview(spacer)
-        for _ in 0..<viewConfiguration.count{
+        for _ in 0..<viewConfiguration.count {
             guard let pinBox = PinBoxFactory().createPinBoxView(type: viewConfiguration.pinViewType) else{
                 return
             }
@@ -95,8 +88,6 @@ extension DXPinView {
         self.setNeedsDisplay()
     }
 }
-
-
 extension DXPinView: UIKeyInput {
     
     public var hasText: Bool {
@@ -104,33 +95,30 @@ extension DXPinView: UIKeyInput {
     }
     
     public func insertText(_ text: String) {
-        if text == "\n"{
+        guard text != "\n",
+              values.count != viewConfiguration.count,
+              TextValidator.isValid(value: text) else {
             self.resignFirstResponder()
             return
-        }
-        if values.count == viewConfiguration.count {
-            self.resignFirstResponder()
-            return
-        }
-        if TextValidator().isValid(value: text){
-            let pinBox = pinBoxes[values.count]
-            pinBox.value = text
-            values.append(text)
         }
         
-        print(values)
+        let pinBox = pinBoxes[values.count]
+        pinBox.value = text
+        values.append(text)
     }
     
     public func deleteBackward() {
-        if !values.isEmpty{
-            values.removeLast()
-            let pinBox = pinBoxes[values.count]
-            pinBox.deleteLast = true
+        guard !values.isEmpty else {
+            return
         }
+        
+        values.removeLast()
+        let pinBox = pinBoxes[values.count]
+        pinBox.deleteLast = true
     }
     
-    @objc(showKeyboard)
-    func showKeyboard(){
+    
+    @objc func showKeyboard() {
         self.becomeFirstResponder()
     }
 }

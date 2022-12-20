@@ -15,25 +15,18 @@ protocol PinBoxViewProtocol where Self: UIView {
     func updateUI()
     func drawLabel()
     init()
-    
 }
 
-extension PinBoxViewProtocol{
-    
+extension PinBoxViewProtocol {
     var configuration: DXPinBoxConfiguration  {
-        get{
+        get {
             return DXPinBoxConfiguration()
-        }
-        set{
-            
         }
     }
     
     var deleteLast : Bool {
-        get{
+        get {
             return true
-        }set{
-            
         }
     }
 
@@ -55,10 +48,6 @@ extension PinBoxViewProtocol{
         self.addConstraint(boxWidthConstraint)
         self.updateConstraints()
         self.setBackground(background: configuration.pinViewBackground)
-    }
-    
-    func updateUI() {
-        
     }
 }
 

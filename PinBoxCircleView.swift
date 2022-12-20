@@ -7,17 +7,17 @@
 
 import Foundation
 
-class PinBoxCircleView: UIView{
+class PinBoxCircleView: UIView {
    
     var valueLabel: UILabel = UILabel()
     var value: String = "" {
-        didSet{
+        didSet {
             valueLabel.text = configuration.showText ? value : "●"
         }
     }
     
     var deleteLast : Bool = false {
-        didSet{
+        didSet {
             valueLabel.text = ""
         }
     }
@@ -47,7 +47,6 @@ class PinBoxCircleView: UIView{
 
 extension PinBoxCircleView: PinBoxViewProtocol {
     func updateUI() {
-        
         self.layer.cornerRadius = self.frame.height/2
         self.clipsToBounds = true
         self.setBorder(border: configuration.borderType, cornerRadius: self.frame.height/2)

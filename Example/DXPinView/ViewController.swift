@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         
         let boxConfig = DXPinBoxConfiguration(textFont: .systemFont(ofSize: 25), showText: false, borderType: .dashed(width: 0.5, color: .black), textColor: .gray)
         let config = DXPinViewConfiguration(count: 5, pinViewType: .circle, pinBoxConfiguration: boxConfig)
-        self.pinView.updateConfiguration(config: config)
+        self.pinView.viewConfiguration = config
     
     }
     
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
 extension ViewController: ConfigurationUpdater{
     
     func updateConfiguration(config: DXPinViewConfiguration){
-        self.pinView.updateConfiguration(config: config)
+        self.pinView.viewConfiguration = config
     }
 }
 

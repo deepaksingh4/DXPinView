@@ -8,9 +8,9 @@
 import Foundation
 
 public struct DXPinViewConfiguration {
-    var count: Int = 5
-    var pinViewType: PinBoxType = .circle
-    var pinBoxConfiguration: DXPinBoxConfiguration = DXPinBoxConfiguration()
+    var count: Int
+    var pinViewType: PinBoxType
+    var pinBoxConfiguration: DXPinBoxConfiguration
     
    public init(count: Int = 4, pinViewType: PinBoxType = .square, pinBoxConfiguration: DXPinBoxConfiguration = DXPinBoxConfiguration()) {
         self.count = count
@@ -18,8 +18,6 @@ public struct DXPinViewConfiguration {
         self.pinBoxConfiguration = pinBoxConfiguration
     }
 }
-
-
 
 public struct DXPinBoxConfiguration {
     var textFont: UIFont
@@ -29,8 +27,12 @@ public struct DXPinBoxConfiguration {
     var borderType: PinBoxBorder
     var textColor: UIColor
     
-    
-    public init(textFont: UIFont = .systemFont(ofSize: 18), pinViewBackground: PinBoxBackground = .fill(color: .white, opacity: 1), borderWidth: Float = 0.5, showText: Bool = true, borderType: PinBoxBorder = .solid(width: 0.5, color: .gray), textColor: UIColor = .blue) {
+    public init(textFont: UIFont = .systemFont(ofSize: 18),
+                pinViewBackground: PinBoxBackground = .fill(color: .white, opacity: 1),
+                borderWidth: Float = 0.5,
+                showText: Bool = true,
+                borderType: PinBoxBorder = .solid(width: 0.5, color: .gray),
+                textColor: UIColor = .blue) {
         self.textFont = textFont
         self.pinViewBackground = pinViewBackground
         self.borderWidth = borderWidth
