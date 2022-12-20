@@ -11,28 +11,32 @@ protocol PinBoxViewProtocol where Self: UIView {
     var valueLabel: UILabel {get set}
     var value: String {get set}
     var configuration: DXPinBoxConfiguration {get set}
-    var deleteLast : Bool {get set}
+    var deleteLast: Bool {get set}
+    
     func updateUI()
     func drawLabel()
     init()
 }
 
 extension PinBoxViewProtocol {
-    var configuration: DXPinBoxConfiguration  {
+    var configuration: DXPinBoxConfiguration {
         get {
             return DXPinBoxConfiguration()
         }
     }
-    
-    var deleteLast : Bool {
+
+    var deleteLast: Bool {
         get {
             return true
         }
     }
+    var valueLabel: UILabel {
+        get{
+            return UILabel()
+        }
+    }
 
-    
-    func drawLabel(){
-        valueLabel = UILabel()
+    func drawLabel() {
         valueLabel.center = self.center
         valueLabel.font = configuration.textFont
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -50,17 +54,3 @@ extension PinBoxViewProtocol {
         self.setBackground(background: configuration.pinViewBackground)
     }
 }
-
-
-public enum PinBoxBorder {
-    case solid(width: Float, color: UIColor)
-    case dashed(width: Float, color: UIColor)
-    case none
-}
-
-public enum PinBoxBackground {
-    case fill(color: UIColor, opacity: Float)
-    case none
-}
-
-
