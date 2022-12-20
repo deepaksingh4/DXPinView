@@ -54,7 +54,6 @@ extension PinBoxViewProtocol{
         let boxWidthConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
         self.addConstraint(boxWidthConstraint)
         self.updateConstraints()
-        self.setBorder(border: configuration.borderType, cornerRadius: self.frame.height/2)
         self.setBackground(background: configuration.pinViewBackground)
     }
     
@@ -67,7 +66,6 @@ extension PinBoxViewProtocol{
 public enum PinBoxBorder {
     case solid(width: Float, color: UIColor)
     case dashed(width: Float, color: UIColor)
-    case underLine
     case none
 }
 

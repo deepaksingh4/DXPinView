@@ -10,27 +10,23 @@ import Foundation
 class PinBoxViewUnderline: UIView{
    
     var valueLabel: UILabel = UILabel()
-    var value: String = "A" {
+    var value: String = "" {
         didSet{
-            valueLabel.text = value
+            valueLabel.text = configuration.showText ? value : "●"
         }
     }
     
-    var background: PinBoxBackground = .none {
+    var deleteLast : Bool = false {
         didSet{
-            switch(background){
-            case .none:
-                self.backgroundColor = .clear
-            case .fill(let color, let opacity):
-                self.backgroundColor = color
-                self.layer.opacity = opacity
-            }
+            valueLabel.text = ""
         }
     }
-    var border: PinBoxBorder = .solid(width: 1, color: .gray) {
+    
+    var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet{
-            self.layer.borderWidth = 1
-            self.layer.borderColor = UIColor.gray.cgColor
+            self.drawLabel()
+            updateUI()
+            self.setNeedsDisplay()
         }
     }
     
@@ -51,7 +47,12 @@ class PinBoxViewUnderline: UIView{
 
 extension PinBoxViewUnderline: PinBoxViewProtocol {
     func updateUI() {
-        self.layer.cornerRadius = self.frame.height/2
-        self.clipsToBounds = true
+        
+        let lineView = UIView()
+        lineView.frame = CGRect(x: 0, y: self.bounds.height - 2, width: self.bounds.width, height: 2)
+        lineView.backgroundColor = .gray
+        self.addSubview(lineView)
+        self.setBackground(background: configuration.pinViewBackground)
+        
     }
 }

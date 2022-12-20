@@ -24,11 +24,19 @@ class ConfigurationViewController: UIViewController{
     private var pinViewType: PinBoxType = .circle
     private var pinBackground: PinBoxBackground = .fill(color: .white, opacity: 1)
     private var pinBorder: PinBoxBorder = .solid(width: 2, color: .gray)
-    private var showText: Bool = true
     
     override func viewDidLoad() {
         isModalInPresentation = true
     }
+    
+    func prepareConfiguration() -> DXPinViewConfiguration{
+        let boxConfig = DXPinBoxConfiguration(textFont: .systemFont(ofSize: 25), pinViewBackground: .fill(color: backgroundPicker.selectedColor ?? .white, opacity: Float(backgroundPicker.alpha)), showText: self.showTextSwitch.isOn, borderType: self.pinBorder, textColor: textColorWheel.selectedColor ?? .darkText)
+        let config = DXPinViewConfiguration(count: 5, pinViewType: pinViewType, pinBoxConfiguration: boxConfig)
+        return config
+    }
+}
+
+extension ConfigurationViewController {
     
     @IBAction func changePinBoxShape(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
@@ -36,6 +44,8 @@ class ConfigurationViewController: UIViewController{
             pinViewType = .circle
         case 1:
             pinViewType = .square
+        case 2:
+            pinViewType = .underLine
         default:
             pinViewType = .square
         }
@@ -48,6 +58,8 @@ class ConfigurationViewController: UIViewController{
             pinBorder = .solid(width: 1, color: .gray)
         case 1:
             pinBorder = .dashed(width: 2, color: .red)
+        case 2:
+            pinBorder = .none
         default:
             pinBorder = .solid(width: 1, color: .gray)
         }
@@ -60,26 +72,11 @@ class ConfigurationViewController: UIViewController{
             return
         }
         
-        guard let presentationController  = presentationController as? ConfiguurationUpdater else{
+        guard let presentationController  = presentationController as? ConfigurationUpdater else{
             return
         }
         self.dismiss(animated: true){
             presentationController.updateConfiguration(config: self.prepareConfiguration())
         }
     }
-    
-    func prepareConfiguration() -> DXPinViewConfiguration{
-        let boxConfig = DXPinBoxConfiguration(textFont: .systemFont(ofSize: 25), pinViewBackground: .fill(color: backgroundPicker.selectedColor ?? .white, opacity: Float(backgroundPicker.alpha)), showText: self.showText, borderType: self.pinBorder, textColor: textColorWheel.selectedColor ?? .darkText)
-        let config = DXPinViewConfiguration(count: 5, pinViewType: pinViewType, pinBoxConfiguration: boxConfig)
-        return config
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        //        preparing configuration
-        
-        
-        
-        
-    }
-    
 }

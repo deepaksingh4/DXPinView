@@ -9,7 +9,7 @@
 import UIKit
 import DXPinView
 
-protocol ConfiguurationUpdater{
+protocol ConfigurationUpdater{
     func updateConfiguration(config: DXPinViewConfiguration)
 }
 
@@ -42,17 +42,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: ConfiguurationUpdater{
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showConfig"{
-            guard let configVC = segue.destination as? ConfigurationViewController else{
-                return
-            }
-            configVC.confifguration = self.pinView.getConfiguration()
-        }
-    }
-    
+extension ViewController: ConfigurationUpdater{
     
     func updateConfiguration(config: DXPinViewConfiguration){
         self.pinView.updateConfiguration(config: config)

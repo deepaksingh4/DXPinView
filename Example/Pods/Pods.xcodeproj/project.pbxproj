@@ -162,16 +162,12 @@
 		9F24403AB507A1A4F379E15A5E93049F /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				D9C243E8294769D900786316 /* PinBoxSquareView.swift */,
-				D9C243E02947286800786316 /* PinBoxViewProtocol.swift */,
-				D9C243E22947477A00786316 /* PinBoxCircleView.swift */,
 				D9C243E529474FFD00786316 /* DXPinView.swift */,
-				F76AC791A59F72AE55FC5A33E2ADA740 /* DXPinView.podspec */,
 				D917955329486AEC00189CC8 /* PinBoxFactory.swift */,
-				D917955529488B8100189CC8 /* PinBoxViewUnderline.swift */,
-				D933D8CE2949A6AD00D851C2 /* UIView+Cosmetics.swift */,
 				D933D8D02949C69300D851C2 /* DXPinViewConfiguration.swift */,
-				D933D8D4294A02DC00D851C2 /* TextValidator.swift */,
+				D95F293829519C5100310206 /* PinViews */,
+				F76AC791A59F72AE55FC5A33E2ADA740 /* DXPinView.podspec */,
+				D95F293929519C6900310206 /* Utils */,
 				137C78BE2DCFC439AD8C28F9141C3EB6 /* LICENSE */,
 				CF9E852B8FE60BA16561C0111682752A /* README.md */,
 			);
@@ -204,6 +200,26 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D95F293829519C5100310206 /* PinViews */ = {
+			isa = PBXGroup;
+			children = (
+				D9C243E02947286800786316 /* PinBoxViewProtocol.swift */,
+				D9C243E8294769D900786316 /* PinBoxSquareView.swift */,
+				D9C243E22947477A00786316 /* PinBoxCircleView.swift */,
+				D917955529488B8100189CC8 /* PinBoxViewUnderline.swift */,
+			);
+			name = PinViews;
+			sourceTree = "<group>";
+		};
+		D95F293929519C6900310206 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D933D8CE2949A6AD00D851C2 /* UIView+Cosmetics.swift */,
+				D933D8D4294A02DC00D851C2 /* TextValidator.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		EFB158498BE29E84E76DE80CEFB03749 /* Development Pods */ = {

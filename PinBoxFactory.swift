@@ -15,7 +15,7 @@ public enum PinBoxType: Int{
 
 struct PinBoxFactory {
     
-    let availablePinBoxes : [PinBoxType: PinBoxViewProtocol.Type] = [.circle: PinBoxCircleView.self,.square: PinBoxSquareView.self]
+    let availablePinBoxes : [PinBoxType: PinBoxViewProtocol.Type] = [.circle: PinBoxCircleView.self,.square: PinBoxSquareView.self, .underLine: PinBoxViewUnderline.self]
     
     func createPinBoxView(type: PinBoxType) -> PinBoxViewProtocol?{
         guard let pinBox = availablePinBoxes[type] else {

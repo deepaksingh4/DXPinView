@@ -25,9 +25,7 @@ extension UIView {
             borderView.path = UIBezierPath(roundedRect: self.bounds, cornerRadius:  cornerRadius).cgPath
             self.layer.addSublayer(borderView)
         case .none:
-            print("No border")
-        case .underLine:
-            print("Later")
+            return
         }
     }
     

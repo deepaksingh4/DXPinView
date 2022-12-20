@@ -7,14 +7,14 @@
 
 public class DXPinView: UIView {
     
-    lazy var values: [String] = []
-    var enteredPin : String {
+    private lazy var values: [String] = []
+    public var enteredPin : String {
         get{
             return values.joined()
         }
     }
-    var pinBoxes : [PinBoxViewProtocol] = []
-    var pinBoxStack : UIStackView = UIStackView()
+    private var pinBoxes : [PinBoxViewProtocol] = []
+    private var pinBoxStack : UIStackView = UIStackView()
     private var viewConfiguration: DXPinViewConfiguration = DXPinViewConfiguration(){
         didSet{
                 self.cleanStackView()
@@ -25,7 +25,7 @@ public class DXPinView: UIView {
     public override var canBecomeFirstResponder: Bool{
         return true
     }
-
+    
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.viewConfiguration = DXPinViewConfiguration()
@@ -34,15 +34,12 @@ public class DXPinView: UIView {
     public func updateConfiguration(config: DXPinViewConfiguration){
         self.viewConfiguration = config
     }
-    public func getConfiguration() -> DXPinViewConfiguration{
-        return viewConfiguration
-    }
 }
 
 
 extension DXPinView {
     
-    func setUpUI(){
+    private func setUpUI(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showKeyboard))
         self.addGestureRecognizer(tapGesture)
         setupStackView()
@@ -54,8 +51,8 @@ extension DXPinView {
                 pinBoxStack.removeArrangedSubview(box)
                 box.removeFromSuperview()
             }
-            
             pinBoxes.removeAll()
+            values.removeAll()
         }
         return
     }
@@ -131,8 +128,6 @@ extension DXPinView: UIKeyInput {
             pinBox.deleteLast = true
         }
     }
-    
-    
     
     @objc(showKeyboard)
     func showKeyboard(){
