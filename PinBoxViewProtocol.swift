@@ -20,13 +20,11 @@ protocol PinBoxViewProtocol where Self: UIView {
 
 extension PinBoxViewProtocol {
     
-    
     var deleteLast : Bool {
         get {
             return true
         }
     }
-
     
     func initUI(){
         valueLabel = UILabel()
@@ -51,17 +49,3 @@ extension PinBoxViewProtocol {
         self.updateConstraints()
     }
 }
-
-
-public enum PinBoxBorder {
-    case solid(width: Float, color: UIColor)
-    case dashed(width: Float, color: UIColor)
-    case none
-}
-
-public enum PinBoxBackground {
-    case fill(color: UIColor, opacity: Float)
-    case none
-}
-
-

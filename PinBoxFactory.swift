@@ -24,12 +24,6 @@ public enum PinBoxType {
     }
 }
 
-enum PinBoxFactoryEnum {
-    case circleBox(PinBoxCircleView)
-    case squareBox(PinBoxCircleView)
-    case underlineBox(PinBoxCircleView)
-}
-
 struct PinBoxFactory {
     static func createPinBoxView(type: PinBoxType) -> PinBoxViewProtocol {
         type.instance

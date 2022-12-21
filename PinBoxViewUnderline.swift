@@ -10,17 +10,17 @@ import Foundation
 class PinBoxViewUnderline: UIView, PinBoxViewProtocol {
     var valueLabel: UILabel = UILabel()
     var value: String = "" {
-        didSet{
+        didSet {
             valueLabel.text = configuration.showText ? value : "●"
         }
     }
-    
-    var deleteLast : Bool = false {
-        didSet{
+
+    var deleteLast: Bool = false {
+        didSet {
             valueLabel.text = ""
         }
     }
-    
+
     var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet{
             initUI()
@@ -28,16 +28,16 @@ class PinBoxViewUnderline: UIView, PinBoxViewProtocol {
             self.setNeedsDisplay()
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initUI()
     }
-    
+
     override func draw(_ rect: CGRect) {
         updateUI()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -48,5 +48,6 @@ class PinBoxViewUnderline: UIView, PinBoxViewProtocol {
         lineView.backgroundColor = .gray
         self.addSubview(lineView)
         self.setBackground(background: configuration.pinViewBackground)
+        self.setBorder(border: configuration.borderType, cornerRadius: 0)
     }
 }

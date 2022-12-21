@@ -7,11 +7,22 @@
 
 import Foundation
 
+public enum PinBoxBorder {
+    case solid(width: Float, color: UIColor)
+    case dashed(width: Float, color: UIColor)
+    case none
+}
+
+public enum PinBoxBackground {
+    case fill(color: UIColor, opacity: Float)
+    case none
+}
+
 public struct DXPinViewConfiguration {
     var count: Int
     var pinViewType: PinBoxType
     var pinBoxConfiguration: DXPinBoxConfiguration
-    
+
    public init(count: Int = 4, pinViewType: PinBoxType = .square, pinBoxConfiguration: DXPinBoxConfiguration = DXPinBoxConfiguration()) {
         self.count = count
         self.pinViewType = pinViewType
@@ -26,7 +37,7 @@ public struct DXPinBoxConfiguration {
     var showText: Bool
     var borderType: PinBoxBorder
     var textColor: UIColor
-    
+
     public init(textFont: UIFont = .systemFont(ofSize: 18),
                 pinViewBackground: PinBoxBackground = .fill(color: .white, opacity: 1),
                 borderWidth: Float = 0.5,

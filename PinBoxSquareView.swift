@@ -8,20 +8,19 @@
 import UIKit
 
 class PinBoxSquareView: UIView, PinBoxViewProtocol {
-        
     var valueLabel: UILabel = UILabel()
     var value: String = "" {
-        didSet{
+        didSet {
             valueLabel.text = configuration.showText ? value : "●"
         }
     }
-    
-    var deleteLast : Bool = false {
-        didSet{
+
+    var deleteLast: Bool = false {
+        didSet {
             valueLabel.text = ""
         }
     }
-    
+
     var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet{
             initUI()
@@ -29,27 +28,25 @@ class PinBoxSquareView: UIView, PinBoxViewProtocol {
             self.setNeedsDisplay()
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initUI()
     }
-    
+
     override func draw(_ rect: CGRect) {
         updateUI()
     }
-    
+
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
-    
-   func updateUI() {
-        self.addSubview(valueLabel)
+
+    func updateUI() {
         self.layer.cornerRadius = 0
         self.clipsToBounds = true
         self.setBackground(background: configuration.pinViewBackground)
         self.setBorder(border: configuration.borderType, cornerRadius: 0)
     }
-    
 
 }

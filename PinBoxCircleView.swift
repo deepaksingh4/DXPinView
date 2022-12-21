@@ -14,13 +14,13 @@ class PinBoxCircleView: UIView, PinBoxViewProtocol {
             valueLabel.text = configuration.showText ? value : "●"
         }
     }
-    
-    var deleteLast : Bool = false {
+
+    var deleteLast: Bool = false {
         didSet {
             valueLabel.text = ""
         }
     }
-    
+
     var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet{
             initUI()
@@ -28,18 +28,17 @@ class PinBoxCircleView: UIView, PinBoxViewProtocol {
             self.setNeedsDisplay()
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initUI()
     }
-    
+
     override func draw(_ rect: CGRect) {
         updateUI()
     }
-    
+
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
  
     func updateUI() {
