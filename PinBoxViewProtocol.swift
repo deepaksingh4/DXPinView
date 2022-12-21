@@ -19,18 +19,19 @@ protocol PinBoxViewProtocol where Self: UIView {
 }
 
 extension PinBoxViewProtocol {
-    var configuration: DXPinBoxConfiguration {
+    private var configuration: DXPinBoxConfiguration {
         get {
             return DXPinBoxConfiguration()
         }
     }
 
-    var deleteLast: Bool {
+   private var deleteLast: Bool {
         get {
             return true
         }
     }
-    var valueLabel: UILabel {
+    
+    private var valueLabel: UILabel {
         get{
             return UILabel()
         }

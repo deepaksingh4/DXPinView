@@ -31,6 +31,11 @@ public class DXPinView: UIView {
         super.init(coder: coder)
         setUpUI()
     }
+
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpUI()
+    }
 }
 
 extension DXPinView {

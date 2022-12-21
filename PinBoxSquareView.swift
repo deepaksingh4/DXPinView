@@ -24,7 +24,7 @@ class PinBoxSquareView: UIView {
 
     var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet {
-            self.drawLabel()
+            drawLabel()
             updateUI()
             self.setNeedsDisplay()
         }
@@ -47,7 +47,6 @@ class PinBoxSquareView: UIView {
 extension PinBoxSquareView: PinBoxViewProtocol {
 
    func updateUI() {
-        self.addSubview(valueLabel)
         self.layer.cornerRadius = 0
         self.clipsToBounds = true
         self.setBackground(background: configuration.pinViewBackground)

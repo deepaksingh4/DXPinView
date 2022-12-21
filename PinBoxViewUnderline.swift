@@ -24,7 +24,7 @@ class PinBoxViewUnderline: UIView {
 
     var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet {
-            self.drawLabel()
+            drawLabel()
             updateUI()
             self.setNeedsDisplay()
         }
@@ -53,6 +53,7 @@ extension PinBoxViewUnderline: PinBoxViewProtocol {
         lineView.backgroundColor = .gray
         self.addSubview(lineView)
         self.setBackground(background: configuration.pinViewBackground)
+        self.setBorder(border: configuration.borderType, cornerRadius: 0)
 
     }
 }
