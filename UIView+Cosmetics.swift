@@ -8,13 +8,13 @@
 import Foundation
 
 extension UIView {
-    
-    func setBorder(border: PinBoxBorder, cornerRadius: CGFloat){
-        switch border{
+
+    func setBorder(border: PinBoxBorder, cornerRadius: CGFloat) {
+        switch border {
         case .solid(let width, let color):
             self.layer.borderWidth = CGFloat(width)
             self.layer.borderColor = color.cgColor
-            
+
         case .dashed(let width, let color):
             let borderView = CAShapeLayer()
             borderView.strokeColor = color.cgColor
@@ -22,15 +22,15 @@ extension UIView {
             borderView.frame = self.bounds
             borderView.lineWidth = CGFloat(width)
             borderView.fillColor = UIColor.clear.cgColor
-            borderView.path = UIBezierPath(roundedRect: self.bounds, cornerRadius:  cornerRadius).cgPath
+            borderView.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
             self.layer.addSublayer(borderView)
         case .none:
             return
         }
     }
-    
-    func setBackground(background: PinBoxBackground){
-        switch(background) {
+
+    func setBackground(background: PinBoxBackground) {
+        switch background {
         case .none:
             self.backgroundColor = .clear
         case .fill(let color, let opacity):

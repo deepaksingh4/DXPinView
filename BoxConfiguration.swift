@@ -7,10 +7,8 @@
 
 import Foundation
 
-//protocol PinViewConfiguration {
+// protocol PinViewConfiguration {
 //    var shape: PinBoxShape {get set}
 //    var type: 
 //    
-//}
-
-
+// }

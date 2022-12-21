@@ -8,11 +8,11 @@
 import Foundation
 
 protocol TextValidatorProtocol {
-    func isValid(value: String) -> Bool
+    static func isValid(value: String) -> Bool
 }
 
-struct TextValidator: TextValidatorProtocol{
-    func isValid(value: String) -> Bool {
+struct TextValidator: TextValidatorProtocol {
+    static func isValid(value: String) -> Bool {
         if value != " "{
             return true
         }

@@ -7,50 +7,45 @@
 
 import Foundation
 
-class PinBoxCircleView: UIView{
-   
+class PinBoxCircleView: UIView, PinBoxViewProtocol {
     var valueLabel: UILabel = UILabel()
     var value: String = "" {
-        didSet{
+        didSet {
             valueLabel.text = configuration.showText ? value : "●"
         }
     }
-    
-    var deleteLast : Bool = false {
-        didSet{
+
+    var deleteLast: Bool = false {
+        didSet {
             valueLabel.text = ""
         }
     }
-    
+
     var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet{
-            self.drawLabel()
+            initUI()
             updateUI()
             self.setNeedsDisplay()
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        drawLabel()
     }
-    
+
     override func draw(_ rect: CGRect) {
         updateUI()
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
 
-extension PinBoxCircleView: PinBoxViewProtocol {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+ 
     func updateUI() {
-        
         self.layer.cornerRadius = self.frame.height/2
         self.clipsToBounds = true
         self.setBorder(border: configuration.borderType, cornerRadius: self.frame.height/2)
         self.setBackground(background: configuration.pinViewBackground)
     }
+
 }
