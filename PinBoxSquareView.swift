@@ -5,11 +5,10 @@
 //  Created by Deepak Singh on 12/12/22.
 //
 
-import Foundation
+import UIKit
 
-class PinBoxSquareView: UIView {
-    
-    
+class PinBoxSquareView: UIView, PinBoxViewProtocol {
+        
     var valueLabel: UILabel = UILabel()
     var value: String = "" {
         didSet{
@@ -25,7 +24,7 @@ class PinBoxSquareView: UIView {
     
     var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet{
-            self.drawLabel()
+            initUI()
             updateUI()
             self.setNeedsDisplay()
         }
@@ -33,7 +32,7 @@ class PinBoxSquareView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        drawLabel()
+        initUI()
     }
     
     override func draw(_ rect: CGRect) {
@@ -43,10 +42,6 @@ class PinBoxSquareView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-
-extension PinBoxSquareView: PinBoxViewProtocol{
     
    func updateUI() {
         self.addSubview(valueLabel)

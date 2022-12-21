@@ -75,9 +75,7 @@ extension DXPinView {
         let spacer = UIView()
         self.pinBoxStack.addArrangedSubview(spacer)
         for _ in 0..<viewConfiguration.count {
-            guard let pinBox = PinBoxFactory().createPinBoxView(type: viewConfiguration.pinViewType) else{
-                return
-            }
+            let pinBox = PinBoxFactory.createPinBoxView(type: viewConfiguration.pinViewType)
             pinBox.heightAnchor.constraint(equalToConstant: self.frame.height).isActive = true
             pinBox.configuration = viewConfiguration.pinBoxConfiguration
             self.pinBoxes.append(pinBox)
@@ -88,6 +86,7 @@ extension DXPinView {
         self.setNeedsDisplay()
     }
 }
+
 extension DXPinView: UIKeyInput {
     
     public var hasText: Bool {

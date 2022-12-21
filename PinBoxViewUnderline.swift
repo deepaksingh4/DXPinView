@@ -7,8 +7,7 @@
 
 import Foundation
 
-class PinBoxViewUnderline: UIView{
-   
+class PinBoxViewUnderline: UIView, PinBoxViewProtocol {
     var valueLabel: UILabel = UILabel()
     var value: String = "" {
         didSet{
@@ -24,7 +23,7 @@ class PinBoxViewUnderline: UIView{
     
     var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet{
-            self.drawLabel()
+            initUI()
             updateUI()
             self.setNeedsDisplay()
         }
@@ -32,7 +31,7 @@ class PinBoxViewUnderline: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        drawLabel()
+        initUI()
     }
     
     override func draw(_ rect: CGRect) {
@@ -43,16 +42,11 @@ class PinBoxViewUnderline: UIView{
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-extension PinBoxViewUnderline: PinBoxViewProtocol {
     func updateUI() {
-        
         let lineView = UIView()
         lineView.frame = CGRect(x: 0, y: self.bounds.height - 2, width: self.bounds.width, height: 2)
         lineView.backgroundColor = .gray
         self.addSubview(lineView)
         self.setBackground(background: configuration.pinViewBackground)
-        
     }
 }

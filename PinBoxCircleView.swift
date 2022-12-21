@@ -7,8 +7,7 @@
 
 import Foundation
 
-class PinBoxCircleView: UIView {
-   
+class PinBoxCircleView: UIView, PinBoxViewProtocol {
     var valueLabel: UILabel = UILabel()
     var value: String = "" {
         didSet {
@@ -24,7 +23,7 @@ class PinBoxCircleView: UIView {
     
     var configuration: DXPinBoxConfiguration = DXPinBoxConfiguration() {
         didSet{
-            self.drawLabel()
+            initUI()
             updateUI()
             self.setNeedsDisplay()
         }
@@ -32,7 +31,7 @@ class PinBoxCircleView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        drawLabel()
+        initUI()
     }
     
     override func draw(_ rect: CGRect) {
@@ -42,14 +41,12 @@ class PinBoxCircleView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-}
-
-extension PinBoxCircleView: PinBoxViewProtocol {
+ 
     func updateUI() {
         self.layer.cornerRadius = self.frame.height/2
         self.clipsToBounds = true
         self.setBorder(border: configuration.borderType, cornerRadius: self.frame.height/2)
         self.setBackground(background: configuration.pinViewBackground)
     }
+
 }
