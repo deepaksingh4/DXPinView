@@ -9,6 +9,7 @@ import UIKit
 public class DXPinView: UIView {
 
     private lazy var values: [String] = []
+    ///use it to get the final value user has eneterd
     public var enteredPin: String {
         get {
             return values.joined()
@@ -26,12 +27,16 @@ public class DXPinView: UIView {
     public override var canBecomeFirstResponder: Bool {
         return true
     }
-
+    
+    /// Initalizer for storyboard initalizer
+    /// - Parameter coder: coder
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUpUI()
     }
-
+    
+    ///Initalizer to be used while adding view from code
+    /// - Parameter frame: frame of the view
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setUpUI()
@@ -93,7 +98,6 @@ extension DXPinView {
 }
 
 extension DXPinView: UIKeyInput {
-
     public var hasText: Bool {
         return values.isEmpty
     }
