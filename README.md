@@ -28,4 +28,4 @@ Deepak
 
 DXPinView is available under the MIT license. See the LICENSE file for more info.
 
-[preview_image] demo.gif
+[preview_image]: demo.gif
