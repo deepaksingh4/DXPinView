@@ -8,7 +8,8 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+![Gif1][preview_image]
+
 
 ## Installation
 
@@ -26,3 +27,5 @@ Deepak
 ## License
 
 DXPinView is available under the MIT license. See the LICENSE file for more info.
+
+[preview_image] demo.gif

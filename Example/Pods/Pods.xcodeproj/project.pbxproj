@@ -80,6 +80,7 @@
 		D933D8CE2949A6AD00D851C2 /* UIView+Cosmetics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Cosmetics.swift"; sourceTree = "<group>"; };
 		D933D8D02949C69300D851C2 /* DXPinViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXPinViewConfiguration.swift; sourceTree = "<group>"; };
 		D933D8D4294A02DC00D851C2 /* TextValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValidator.swift; sourceTree = "<group>"; };
+		D95EAB442965A18500B09FB9 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		D9C243E02947286800786316 /* PinBoxViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxViewProtocol.swift; sourceTree = "<group>"; };
 		D9C243E22947477A00786316 /* PinBoxCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinBoxCircleView.swift; sourceTree = "<group>"; };
 		D9C243E529474FFD00786316 /* DXPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXPinView.swift; sourceTree = "<group>"; };
@@ -164,6 +165,7 @@
 			children = (
 				D9CAC7DF2952F41D00F8D03E /* Source */,
 				F76AC791A59F72AE55FC5A33E2ADA740 /* DXPinView.podspec */,
+				D95EAB442965A18500B09FB9 /* demo.gif */,
 				137C78BE2DCFC439AD8C28F9141C3EB6 /* LICENSE */,
 				CF9E852B8FE60BA16561C0111682752A /* README.md */,
 			);
